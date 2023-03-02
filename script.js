@@ -76,6 +76,8 @@ const displayAiHub = (datas, isShowMore) => {
 
 }
 
+
+//fetch single api
 const fetchSingleAi = id => {
     // console.log(id);
 
@@ -86,6 +88,8 @@ const fetchSingleAi = id => {
 
 
 
+
+//show Single Data in Modal
 const showSingleDetailsInAi=(data)=>{
 
 

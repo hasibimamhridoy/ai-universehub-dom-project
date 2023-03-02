@@ -36,6 +36,30 @@ const shortDataDiplay = (datas) => {
         return x - y;
     });
 
+    displayAiHub(sortData.slice(0,6))
+    const sortMoreBtn = document.getElementById('sortMoreBtn')
+    console.log(sortMoreBtn);
+    sortMoreBtn.classList.remove("hidden")
+}
 
+
+//Fetch short more data using async
+const fetchSortDataShowFull = async ()=>{
+    const res = await fetch('https://openapi.programming-hero.com/api/ai/tools')
+    const datas = await res.json()
+    showMoreSortBtnClick(datas.data.tools);
+    
+}
+
+const showMoreSortBtnClick =(datas)=>{
+    const sortData = datas.sort((x, y) => {
+        x = new Date(x.published_in),
+            y = new Date(y.published_in);
+        return x - y;
+    });
+    
     displayAiHub(sortData)
+    const sortMoreBtn = document.getElementById('sortMoreBtn')
+    console.log(sortMoreBtn);
+    sortMoreBtn.classList.add("hidden")
 }
