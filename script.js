@@ -88,6 +88,9 @@ const fetchSingleAi = id => {
 
 const showSingleDetailsInAi=(data)=>{
 
+
+    
+
     const {description,tool_name,features,image_link,pricing,input_output_examples,accuracy,integrations} = data
 
  
@@ -97,21 +100,13 @@ const showSingleDetailsInAi=(data)=>{
         featuresArrayFilter.push(features[singleFeatures].feature_name)
         }
 
-        console.log(pricing);
-
-    //pricing 
-    // pricing.forEach(element => {
-    //     console.log(element);
-    // });
-    // 
-
     const modalContainer = document.getElementById('modal-container')
     modalContainer.innerHTML=''
 
 
     modalContainer.innerHTML += `
     
-    <div class="cards gap-5 my-3 lg:my-10 flex-col lg:flex lg:flex-row mx-5 space-y-5 lg:space-y-0 lg:mx-0 justify-center items-center">
+    <div id="modalConNoIncludes" class="cards gap-5 my-3 lg:my-10 flex-col lg:flex lg:flex-row mx-5 space-y-5 lg:space-y-0 lg:mx-0 justify-center items-center">
 
 
     <div
@@ -158,7 +153,7 @@ const showSingleDetailsInAi=(data)=>{
         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[37rem]">
         
             <div class="accuracy-img-con relative flex justify-end">
-                <div class="bg-red-400 px-5 py-2 absolute mr-5  top-3 rounded-lg text-center flex justify-center items-center"><span class="text-center text-white font-bold text-md">${accuracy.score ? accuracy.score : "No accuracy show" }</span></div>
+                <div id="noAccuracy"  class="bg-red-400 px-5 py-2 absolute mr-5  top-3 rounded-lg text-center flex justify-center items-center"><span  class="text-center text-white font-bold text-md">${accuracy.score ? accuracy.score : "No" } % accuracy </span></div>
                 <img class="rounded-t-lg w-full" src="${image_link[0]}" alt="" />
                
             </div>
@@ -178,9 +173,16 @@ const showSingleDetailsInAi=(data)=>{
 </div>
     
     `
-    
+    //Null Accuracy handle and hidden the container
+    const modalContainerIncludes = document.getElementById("modalConNoIncludes")
+    const accuracyContainer = document.getElementById("noAccuracy")
+    if(modalContainerIncludes.innerText.includes('No % accuracy')){
+        accuracyContainer.classList.add("hidden")
+    }
 
+    
 }
+
 
 
 
