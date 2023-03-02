@@ -21,6 +21,13 @@ const generateFeatures = features => {
 
 //Fetch short using async
 const fetchSortData = async ()=>{
+
+    //spinner
+    const spinner = document.getElementById('spinner')
+    console.log(spinner);
+        spinner.classList.remove("hidden")
+        spinner.classList.add("block")
+
     const res = await fetch('https://openapi.programming-hero.com/api/ai/tools')
     const datas = await res.json()
     shortDataDiplay(datas.data.tools);
@@ -28,6 +35,8 @@ const fetchSortData = async ()=>{
 }
 
 const shortDataDiplay = (datas) => {
+
+    
 
     // sort by the date
     const sortData = datas.sort((x, y) => {
