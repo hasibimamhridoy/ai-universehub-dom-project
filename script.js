@@ -34,7 +34,7 @@ const displayAiHub = (datas, isShowMore) => {
 
         mainContainer.innerHTML += `
         <div
-        class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        class="w-full max-w-md mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div class="rounded-2xl"">
             <img class="rounded-t-lg" src="${image}" alt="product image" />
         </div>
@@ -89,9 +89,7 @@ const fetchSingleAi = id => {
 const showSingleDetailsInAi=(data)=>{
 
 
-    
-
-    const {description,tool_name,features,image_link,pricing,input_output_examples,accuracy,integrations} = data
+    const {description,features,image_link,pricing,input_output_examples,accuracy,integrations} = data
 
  
     //features arrayFilterCreated
@@ -117,16 +115,16 @@ const showSingleDetailsInAi=(data)=>{
 
         <div class="mt-5 small-card-money justify-center flex gap-5">
             <div class="bg-white text-sm rounded-md p-3 font-semibold text-green-600 text-center">
-            <h1>${pricing ? pricing[0].plan : "No pricing Found"}</h1>
-            <p>${pricing ? pricing[0].price : ""}</p>
+            <h1>${pricing ? pricing[0].plan : "Basic/"}</h1>
+            <p>${pricing ? pricing[0].price : "Free of cost"}</p>
             </div>
             <div class="bg-white text-sm rounded-md p-3 font-semibold text-orange-400 text-center">
-            <h1>${pricing ? pricing[1].plan : "No pricing Found"}</h1>
-            <p>${pricing ? pricing[1].price : ""}</p>
+            <h1>${pricing ? pricing[1].plan : "Pro/"}</h1>
+            <p>${pricing ? pricing[1].price : "Free of cost"}</p>
             </div>
             <div class="bg-white text-sm rounded-md p-3 font-semibold text-red-600 text-center">
-            <h1>${pricing ? pricing[2].plan : "No pricing Found"}</h1>
-            <p>${pricing ? pricing[2].price : ""}</p>
+            <h1>${pricing ? pricing[2].plan : "Free of cost"}</h1>
+            <p>${pricing ? pricing[2].price : "Enterprise"}</p>
             </div>
         </div>
 
@@ -161,10 +159,10 @@ const showSingleDetailsInAi=(data)=>{
         <div class="p-5">
 
             <p class="mb-3 text-2xl font-semibold text-center text-black dark:text-gray-400">
-                ${input_output_examples ? input_output_examples[0].input : "No Input Provided" }
+                ${input_output_examples ? input_output_examples[0].input : "Can you give any example?" }
             </p>
             <p class="mb-3 font-normal text-center text-gray-700 dark:text-gray-400">
-            ${input_output_examples ? input_output_examples[0].output.slice(0,120) : "No Output Provided" }
+            ${input_output_examples ? input_output_examples[0].output.slice(0,120) : "No! Not Yet! Take a break!!!" }
             </p>
 
         </div>
@@ -182,11 +180,5 @@ const showSingleDetailsInAi=(data)=>{
 
     
 }
-
-
-
-
-
-
 
 fetchUniverHub(6)
