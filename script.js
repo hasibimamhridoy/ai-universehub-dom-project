@@ -71,6 +71,8 @@ const displayAiHub = (datas, isShowMore) => {
 
         const spinner = document.getElementById('spinner')
         spinner.classList.add("hidden")
+        const showMoreSpinner = document.getElementById('showMoreSpinner')
+        showMoreSpinner.classList.add("hidden")
     });
 
 

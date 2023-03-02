@@ -1,8 +1,10 @@
 
 //ShowMoreTools
 const showMoreToolsDisplay = () => {
+    const showMoreSpinner = document.getElementById('showMoreSpinner')
+    showMoreSpinner.classList.remove("hidden")
     fetchUniverHub()
-
+    
 }
 
 
@@ -54,6 +56,9 @@ const shortDataDiplay = (datas) => {
 
 //Fetch short more data using async
 const fetchSortDataShowFull = async ()=>{
+    const showMoreSpinner = document.getElementById('showMoreSpinner')
+    showMoreSpinner.classList.remove("hidden")
+
     const res = await fetch('https://openapi.programming-hero.com/api/ai/tools')
     const datas = await res.json()
     showMoreSortBtnClick(datas.data.tools);
