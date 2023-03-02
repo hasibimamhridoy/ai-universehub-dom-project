@@ -108,12 +108,12 @@ const showSingleDetailsInAi=(data)=>{
 
 
     <div
-        class="max-w-sm p-6 bg-red-100 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[37rem]">
+        class="max-w-sm p-6 bg-red-100 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-fit lg:h-[37rem]">
 
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             ${description}</h5>
 
-        <div class="mt-5 small-card-money justify-center flex gap-5">
+        <div class="mt-5 small-card-money justify-center flex-col lg:flex lg:flex-row space-y-5 lg:space-y-0 gap-5">
             <div class="bg-white text-sm rounded-md p-3 font-semibold text-green-600 text-center">
             <h1>${pricing ? pricing[0].plan : "Basic/"}</h1>
             <p>${pricing ? pricing[0].price : "Free of cost"}</p>
@@ -148,7 +148,7 @@ const showSingleDetailsInAi=(data)=>{
 
 
     <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[37rem]">
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-fit lg:h-[37rem]">
         
             <div class="accuracy-img-con relative flex justify-end">
                 <div id="noAccuracy"  class="bg-red-400 px-5 py-2 absolute mr-5  top-3 rounded-lg text-center flex justify-center items-center"><span  class="text-center text-white font-bold text-md">${accuracy.score ? accuracy.score : "No" } % accuracy </span></div>
