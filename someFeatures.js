@@ -12,11 +12,23 @@ const generateFeatures = features => {
 
     for (let i = 0; i < features.length; i++) {
         featuresHTML += `<li>
-      <span class="font-semibold text-gray-900 dark:text-white">${features[i]}</span>
+      <span class="font-semibold text-gray-600 dark:text-white">${features[i]}</span>
       </li>`;
     }
 
     return featuresHTML
+}
+//Dynamic Features created
+const generateIntregation = intregation => {
+    let intregationHTML = '';
+
+    for (let i = 0; i < intregation.length; i++) {
+        intregationHTML += `<li>
+      <span class="font-semibold text-gray-600 dark:text-white">${intregation[i]}</span>
+      </li>`;
+    }
+
+    return intregationHTML
 }
 
 
