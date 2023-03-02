@@ -18,19 +18,6 @@ const generateFeatures = features => {
 
     return featuresHTML
 }
-//Dynamic Features created
-const generateIntregation = intregation => {
-    let intregationHTML = '';
-
-    for (let i = 0; i < intregation.length; i++) {
-        intregationHTML += `<li>
-      <span class="font-semibold text-gray-600 dark:text-white">${intregation[i]}</span>
-      </li>`;
-    }
-
-    return intregationHTML
-}
-
 
 //Fetch short using async
 const fetchSortData = async ()=>{

@@ -97,14 +97,13 @@ const showSingleDetailsInAi=(data)=>{
         featuresArrayFilter.push(features[singleFeatures].feature_name)
         }
 
+        console.log(pricing);
+
     //pricing 
-    pricing.forEach(element => {
-        console.log(element);
-    });
-
-   
-
-
+    // pricing.forEach(element => {
+    //     console.log(element);
+    // });
+    // 
 
     const modalContainer = document.getElementById('modal-container')
     modalContainer.innerHTML=''
@@ -122,13 +121,18 @@ const showSingleDetailsInAi=(data)=>{
             ${description}</h5>
 
         <div class="mt-5 small-card-money justify-center flex gap-5">
-            <div class="bg-white text-sm rounded-md p-3 font-semibold text-green-600 text-center">$10/month
-                Basic</div>
-            <div class="bg-white text-sm rounded-md p-3 font-semibold text-orange-400 text-center">$50/month
-                Pro</div>
-            <div class="bg-white text-sm rounded-md p-3 font-semibold text-red-600 text-center">Contact
-                us
-                Enterprise</div>
+            <div class="bg-white text-sm rounded-md p-3 font-semibold text-green-600 text-center">
+            <h1>${pricing ? pricing[0].plan : "No pricing Found"}</h1>
+            <p>${pricing ? pricing[0].price : ""}</p>
+            </div>
+            <div class="bg-white text-sm rounded-md p-3 font-semibold text-orange-400 text-center">
+            <h1>${pricing ? pricing[1].plan : "No pricing Found"}</h1>
+            <p>${pricing ? pricing[1].price : ""}</p>
+            </div>
+            <div class="bg-white text-sm rounded-md p-3 font-semibold text-red-600 text-center">
+            <h1>${pricing ? pricing[2].plan : "No pricing Found"}</h1>
+            <p>${pricing ? pricing[2].price : ""}</p>
+            </div>
         </div>
 
         <div class="mt-5 small-card-features justify-between flex gap-5">
