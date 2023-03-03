@@ -38,7 +38,6 @@ const fetchSortData = async ()=>{
 
 const shortDataDiplay = (datas) => {
 
-    
 
     // sort by the date
     const sortData = datas.sort((x, y) => {
@@ -47,14 +46,33 @@ const shortDataDiplay = (datas) => {
         return x - y;
     });
 
-    displayAiHub(sortData.slice(0,6))
+
+    
+    const main = document.getElementById('showMoreBtn')
+    console.log(main);
+
+    if(main.innerText.includes('Show More Tools')){
+        console.log('working');
+        displayAiHub(sortData.slice(0,6))
     const sortMoreBtn = document.getElementById('sortMoreBtn')
-    console.log(sortMoreBtn);
+    // console.log(sortMoreBtn);
     sortMoreBtn.classList.remove("hidden")
+       
+    }
+
+    else{
+        displayAiHub(sortData)
+    }
+    
+
+    // displayAiHub(sortData.slice(0,6))
+    // const sortMoreBtn = document.getElementById('sortMoreBtn')
+    // // console.log(sortMoreBtn);
+    // sortMoreBtn.classList.remove("hidden")
 }
 
 
-//Fetch short more data using async
+// Fetch short more data using async
 const fetchSortDataShowFull = async ()=>{
     const showMoreSpinner = document.getElementById('showMoreSpinner')
     showMoreSpinner.classList.remove("hidden")
