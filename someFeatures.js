@@ -7,7 +7,6 @@ const showMoreToolsDisplay = () => {
     
 }
 
-
 //Dynamic Features created
 const generateFeatures = features => {
     let featuresHTML = '';
@@ -23,7 +22,7 @@ const generateFeatures = features => {
 
 //Fetch short using async
 const fetchSortData = async ()=>{
-
+    
     //spinner
     const spinner = document.getElementById('spinner')
     console.log(spinner);
@@ -37,7 +36,7 @@ const fetchSortData = async ()=>{
 }
 
 const shortDataDiplay = (datas) => {
-
+    
 
     // sort by the date
     const sortData = datas.sort((x, y) => {
@@ -49,26 +48,31 @@ const shortDataDiplay = (datas) => {
 
     
     const main = document.getElementById('showMoreBtn')
+    const sortMoreBtn = document.getElementById('sortMoreBtn')
     console.log(main);
 
     if(main.innerText.includes('Show More Tools')){
         console.log('working');
         displayAiHub(sortData.slice(0,6))
     const sortMoreBtn = document.getElementById('sortMoreBtn')
-    // console.log(sortMoreBtn);
+    sortMoreBtn.classList.remove("hidden")
+       
+    }
+
+    else if(sortMoreBtn.innerText.includes('Show More')){
+        console.log('working');
+        displayAiHub(sortData.slice(0,6))
+
+    const sortMoreBtn = document.getElementById('sortMoreBtn')
     sortMoreBtn.classList.remove("hidden")
        
     }
 
     else{
+       
         displayAiHub(sortData)
     }
     
-
-    // displayAiHub(sortData.slice(0,6))
-    // const sortMoreBtn = document.getElementById('sortMoreBtn')
-    // // console.log(sortMoreBtn);
-    // sortMoreBtn.classList.remove("hidden")
 }
 
 

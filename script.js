@@ -27,8 +27,11 @@ const displayAiHub = (datas, isShowMore) => {
         showMoreBtn.classList.add("hidden")
     }
 
+    
+
     datas.forEach(data => {
         // console.log(data);
+        
 
         const { image, features, name, published_in, id } = data
 
