@@ -93,7 +93,8 @@ const fetchSingleAi = id => {
 
 //show Single Data in Modal
 const showSingleDetailsInAi=(data)=>{
-
+    const modalContainer = document.getElementById('modal-container')
+    modalContainer.innerHTML=''
 
     const {description,features,image_link,pricing,input_output_examples,accuracy,integrations} = data
 
@@ -104,8 +105,7 @@ const showSingleDetailsInAi=(data)=>{
         featuresArrayFilter.push(features[singleFeatures].feature_name)
         }
 
-    const modalContainer = document.getElementById('modal-container')
-    modalContainer.innerHTML=''
+   
 
 
     modalContainer.innerHTML += `
@@ -157,7 +157,7 @@ const showSingleDetailsInAi=(data)=>{
         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-fit lg:h-[37rem]">
         
             <div class="accuracy-img-con relative flex justify-end">
-                <div id="noAccuracy"  class="bg-red-400 px-5 py-2 absolute mr-5  top-3 rounded-lg text-center flex justify-center items-center"><span  class="text-center text-white font-bold text-md">${accuracy.score ? accuracy.score : "No" } % accuracy </span></div>
+                <div id="noAccuracy"  class="bg-red-400 px-5 py-2 absolute mr-5  top-3 rounded-lg text-center flex justify-center items-center"><span  class="text-center text-white font-bold text-md">${accuracy.score ? (accuracy.score*100) : "No" } % accuracy </span></div>
                 <img class="rounded-t-lg w-full" src="${image_link[0]}" alt="" />
                
             </div>
