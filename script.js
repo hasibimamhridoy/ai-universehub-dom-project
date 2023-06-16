@@ -100,6 +100,7 @@ const showSingleDetailsInAi=(data)=>{
     modalContainer.innerHTML=''
 
     const {description,features,image_link,pricing,input_output_examples,accuracy,integrations} = data
+    console.log(integrations);
 
  
     //features arrayFilterCreated
